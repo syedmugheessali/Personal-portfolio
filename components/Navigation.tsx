@@ -33,22 +33,24 @@ export function Navigation() {
   }, [open]);
 
   return (
-    <header className={`site-header ${scrolled || open ? "is-scrolled" : ""}`}>
-      <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="wordmark" href="#home" aria-label="Syed Mughees Ali, home"><span>SMA</span><small>Full-Stack Developer</small></a>
-        <div className="desktop-nav">
-          {links.map(([id, label]) => <a key={id} className={active === id ? "active" : ""} href={`#${id}`}>{label}</a>)}
-        </div>
-        <div className="nav-actions">
-          {isPublicAssetUrl(siteConfig.resume) ? <a className="resume-link" href={siteConfig.resume} download><ArrowDownToLine size={16} /> Résumé</a> : <a className="resume-link" href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Résumé request")}`}><ArrowDownToLine size={16} /> Request résumé</a>}
-          <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation menu" : "Open navigation menu"}>{open ? <X /> : <Menu />}</button>
-        </div>
-      </nav>
+    <>
+      <header className={`site-header ${scrolled || open ? "is-scrolled" : ""} ${open ? "menu-open" : ""}`}>
+        <nav className="nav-shell" aria-label="Primary navigation">
+          <a className="wordmark" href="#home" aria-label="Syed Mughees Ali, home"><span>SMA</span><small>Full-Stack Developer</small></a>
+          <div className="desktop-nav">
+            {links.map(([id, label]) => <a key={id} className={active === id ? "active" : ""} href={`#${id}`}>{label}</a>)}
+          </div>
+          <div className="nav-actions">
+            {isPublicAssetUrl(siteConfig.resume) ? <a className="resume-link" href={siteConfig.resume} download><ArrowDownToLine size={16} /> Résumé</a> : <a className="resume-link" href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Résumé request")}`}><ArrowDownToLine size={16} /> Request résumé</a>}
+            <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation menu" : "Open navigation menu"}>{open ? <X /> : <Menu />}</button>
+          </div>
+        </nav>
+      </header>
       <AnimatePresence>
-        {open && <motion.div id="mobile-menu" className="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.22 }}>
+        {open && <motion.div id="mobile-menu" className="mobile-menu" initial={{ y: -14 }} animate={{ y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.22 }}>
           {links.map(([id, label], index) => <motion.a key={id} href={`#${id}`} onClick={() => setOpen(false)} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.04 }}>{label}<span>0{index + 1}</span></motion.a>)}
         </motion.div>}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

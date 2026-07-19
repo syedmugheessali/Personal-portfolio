@@ -35,6 +35,8 @@ test("mobile navigation supports keyboard dismissal", async ({ page }) => {
   const button = page.getByRole("button", { name: "Open navigation menu" });
   await button.click();
   await expect(page.locator("#mobile-menu")).toBeVisible();
+  await expect(page.locator("#mobile-menu")).toHaveCSS("background-color", "rgb(6, 18, 37)");
+  await page.screenshot({ path: ".qa/screenshots/mobile-menu-open.png", animations: "disabled" });
   await page.keyboard.press("Escape");
   await expect(page.locator("#mobile-menu")).toBeHidden();
 });
