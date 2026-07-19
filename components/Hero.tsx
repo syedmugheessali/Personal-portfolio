@@ -46,7 +46,7 @@ export function Hero() {
             {isPublicAssetUrl(siteConfig.portrait) ? <Image src={siteConfig.portrait} alt="Portrait of Syed Mughees Ali" width={800} height={1000} priority unoptimized/> : <div className="portrait-placeholder" role="img" aria-label="Portrait pending"><span>SMA</span><small>Professional portrait pending</small></div>}
             <span className="portrait-sheen" aria-hidden="true" />
           </motion.div>
-          <div className="portrait-label label-role"><span>Current</span>Full-Stack Developer<br/>Disc & Drive</div>
+          <div className="portrait-label label-role"><span>Current</span>Full-Stack Developer<br/><strong className="company-name">Disc & Drive</strong></div>
           <div className="portrait-label label-location"><MapPin size={15}/>{siteConfig.location}</div>
         </motion.div>
       </div>

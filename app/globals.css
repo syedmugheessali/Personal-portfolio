@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --deep:#061225; --navy:#08182f; --raised:#102844; --paper:#f5f7fb; --white:#fff; --blue:#3b82f6; --blue-light:#60a5fa; --ink:#101827; --muted:#667085; --border:#dbe3ee; --dark-border:rgba(255,255,255,.13); --shadow:0 24px 70px rgba(6,18,37,.12); }
+:root { --deep:#061225; --navy:#08182f; --raised:#102844; --paper:#f5f7fb; --white:#fff; --blue:#3b82f6; --blue-light:#60a5fa; --gold:#8a6500; --gold-light:#f4c95d; --ink:#101827; --muted:#667085; --border:#dbe3ee; --dark-border:rgba(255,255,255,.13); --shadow:0 24px 70px rgba(6,18,37,.12); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; scroll-padding-top:76px; overflow-x:clip; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--font-body),sans-serif; font-size:1.0625rem; line-height:1.65; overflow-x:clip; }
@@ -105,6 +105,9 @@ button,a { cursor:pointer; }
 .portrait-label { transition:transform .25s,box-shadow .25s; }
 .portrait-stage:hover .portrait-label { transform:translateY(-3px);box-shadow:0 20px 50px rgba(6,18,37,.2); }
 .label-location { top:12%; }
+.company-name { color:var(--gold);font-family:var(--font-heading);font-weight:750; }
+.company-name.on-dark { color:var(--gold-light); }
+.snapshot-item .company-name { color:var(--gold);font-weight:750; }
 .snapshot-item { position:relative;transition:background .25s,transform .25s; }
 .snapshot-item::after { content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,1,.36,1); }
 .snapshot-item:hover { background:var(--paper);transform:translateY(-4px); }

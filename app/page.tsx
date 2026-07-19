@@ -62,7 +62,7 @@ export default function Home() {
 
         <section id="snapshot" className="snapshot section-light" aria-label="Recruiter snapshot">
           <div className="snapshot-grid">
-            {snapshot.map((item, index) => <Reveal className="snapshot-item" delay={index * 0.05} key={item.label}><span className="snapshot-index">0{index + 1}</span><p>{item.label}</p><h2>{item.value}</h2><small>{item.detail}</small></Reveal>)}
+            {snapshot.map((item, index) => <Reveal className="snapshot-item" delay={index * 0.05} key={item.label}><span className="snapshot-index">0{index + 1}</span><p>{item.label}</p><h2>{item.value}</h2><small className={item.detail === "Disc & Drive" ? "company-name" : undefined}>{item.detail}</small></Reveal>)}
           </div>
         </section>
 
@@ -70,7 +70,7 @@ export default function Home() {
           <div className="section-shell about-grid">
             <Reveal className="about-statement"><SectionLabel index="01">Profile</SectionLabel><h2>Building practical software.<br/><em>Learning through real work.</em></h2></Reveal>
             <Reveal className="about-copy" delay={0.08}>
-              <p className="lead">I am a Software Engineering student at Bahria University and currently work in a full-stack development role at Disc & Drive.</p>
+              <p className="lead">I am a Software Engineering student at Bahria University and currently work in a full-stack development role at <strong className="company-name">Disc & Drive</strong>.</p>
               <p>My practical experience includes contributing to responsive front-end interfaces, back-end logic, database operations, API integration, debugging and application improvement.</p>
               <p>My current technical foundation includes C#, Python, SQL, full-stack web development, database design and structured problem-solving.</p>
               <p>I am also developing foundational knowledge in machine learning and data science through formal coursework. My primary career focus is software engineering and full-stack application development.</p>
@@ -86,7 +86,7 @@ export default function Home() {
               <ExperienceProgress />
               <Reveal className="experience-role">
                 <div className="role-meta"><span>June 2026 — Present</span><span>Karachi, Sindh, Pakistan</span></div>
-                <div className="role-heading"><p>Disc & Drive</p><h3>Full-Stack Developer</h3></div>
+                <div className="role-heading"><p className="company-name on-dark">Disc & Drive</p><h3>Full-Stack Developer</h3></div>
               </Reveal>
               <ol className="responsibility-list">
                 {responsibilities.map((item, index) => <li key={item}><Reveal delay={index * 0.04}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></Reveal></li>)}
