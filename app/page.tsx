@@ -1,6 +1,7 @@
 import { ArrowRight, AtSign, Code2, Database, ExternalLink, GraduationCap, Mail, MapPin, ServerCog } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { Navigation } from "@/components/Navigation";
+import { PageEnhancements } from "@/components/PageEnhancements";
 import { Reveal } from "@/components/Reveal";
 import { ExperienceProgress, ProjectSequence } from "@/components/ScrollStories";
 import { isPublicUrl, siteConfig } from "@/lib/site";
@@ -55,6 +56,7 @@ export default function Home() {
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <Navigation />
+      <PageEnhancements />
       <main id="main-content">
         <Hero />
 
