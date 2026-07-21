@@ -16,8 +16,6 @@ export function Hero() {
     <section id="home" data-section className="hero section-dark">
       <div className="hero-grid blueprint">
         <div className="hero-copy">
-          <motion.div className="availability" {...enter(0.05)}><span /> Available for junior development opportunities</motion.div>
-          <motion.p className="hero-kicker" {...enter(0.15)}>Karachi · Software Engineering · Full-Stack</motion.p>
           <div className="hero-title-mask"><motion.h1 {...enter(0.22)}>Hi, I’m<br/><strong>Syed Mughees Ali.</strong></motion.h1></div>
           <motion.p className="hero-role" {...enter(0.34)}>Junior Full-Stack Developer</motion.p>
           <motion.p className="hero-intro" {...enter(0.42)}>I am a Software Engineering student at Bahria University with practical experience in full-stack development. I build responsive, database-driven web applications with a focus on C#, Python, SQL and API integration.</motion.p>
@@ -31,7 +29,6 @@ export function Hero() {
           </motion.ul>
         </div>
         <motion.div className="portrait-stage" initial={reduced ? false : { opacity: 0, clipPath: "inset(0 0 100% 0)" }} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} transition={{ delay: 0.38, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}>
-          <div className="portrait-index">01 / PROFILE</div>
           <motion.div
             className="portrait-frame"
             style={{ rotateX: portraitRotateX, rotateY: portraitRotateY, transformPerspective: 1000 }}
