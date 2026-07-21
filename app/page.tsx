@@ -1,10 +1,12 @@
-import { ArrowRight, AtSign, Code2, Database, ExternalLink, GraduationCap, Mail, MapPin, ServerCog } from "lucide-react";
+import { ArrowRight, AtSign, BadgeCheck, Code2, Database, Download, ExternalLink, GraduationCap, Mail, MapPin, ServerCog } from "lucide-react";
+import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { Navigation } from "@/components/Navigation";
 import { PageEnhancements } from "@/components/PageEnhancements";
 import { Reveal } from "@/components/Reveal";
 import { ExperienceProgress, ProjectSequence } from "@/components/ScrollStories";
 import { isPublicUrl, siteConfig } from "@/lib/site";
+import { certificates } from "@/lib/certificates";
 
 const snapshot = [
   { label: "Current role", value: "Full-Stack Developer", detail: "Disc & Drive" },
@@ -124,17 +126,46 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="credentials section-light section-pad" aria-labelledby="credentials-title">
+        <section id="credentials" className="credentials section-light section-pad" aria-labelledby="credentials-title">
           <div className="section-shell credential-grid">
             <Reveal className="education-block"><SectionLabel index="06">Education</SectionLabel><GraduationCap size={34}/><p>Bahria University</p><h2 id="credentials-title">Software Engineering</h2><span>September 2023 — May 2027</span><div className="education-note">Formal study supporting a practical full-stack development path.</div></Reveal>
-            <div className="certification-rail"><Reveal><p className="eyebrow">Confirmed credentials</p><h3>Continuous learning,<br/>documented precisely.</h3></Reveal>{certifications.map((cert, index) => <Reveal className="credential-item" delay={index * 0.06} key={cert.title}><span>0{index + 1}</span><div><h4>{cert.title}</h4><p>{cert.issuer}</p></div><time>{cert.date}</time></Reveal>)}</div>
+            <div className="certification-rail"><Reveal><p className="eyebrow">Confirmed credentials</p><h3>Continuous learning,<br/>documented precisely.</h3></Reveal>{certifications.map((cert, index) => <Reveal className="credential-item" delay={index * 0.06} key={cert.title}><span>0{index + 1}</span><div><h4>{cert.title}</h4><p>{cert.issuer}</p></div><time>{cert.date}</time></Reveal>)}<Reveal><a className="button button-dark credential-archive-link" href="#certificates">View all certificates <ArrowRight size={16}/></a></Reveal></div>
+          </div>
+        </section>
+
+        <section id="certificates" data-section className="certificates-home section-paper section-pad" aria-labelledby="certificates-title">
+          <div className="section-shell">
+            <Reveal className="certificate-archive-intro">
+              <div><SectionLabel index="07">Certificates</SectionLabel><h2 id="certificates-title">Verified learning,<br/>documented precisely.</h2></div>
+              <p>Six original course certificates across development, data science and machine learning. Open the PDF, download it, or verify completion directly through Coursera.</p>
+            </Reveal>
+            <div className="certificate-list">
+              {certificates.map((certificate, index) => (
+                <Reveal className="certificate-card" delay={(index % 2) * 0.06} key={certificate.credentialId}>
+                  <a className="certificate-preview" href={certificate.pdf} target="_blank" rel="noreferrer" aria-label={`View ${certificate.title} certificate PDF`}>
+                    <Image src={certificate.thumbnail} alt={`${certificate.title} certificate issued by ${certificate.issuer}`} fill sizes="(max-width: 720px) 100vw, 50vw" />
+                    <span>View original <ExternalLink size={16}/></span>
+                  </a>
+                  <div className="certificate-card-body">
+                    <div className="certificate-card-meta"><span>{String(index + 1).padStart(2, "0")} / {certificate.category}</span><time dateTime={certificate.dateTime}>{certificate.date}</time></div>
+                    <h3>{certificate.title}</h3>
+                    <p className="certificate-issuer"><BadgeCheck size={18}/>{certificate.issuer} · Coursera</p>
+                    <p className="credential-code">Credential ID <strong>{certificate.credentialId}</strong></p>
+                    <div className="certificate-actions">
+                      <a className="button button-dark" href={certificate.verifyUrl} target="_blank" rel="noreferrer">Verify credential <ExternalLink size={16}/></a>
+                      <a className="certificate-download" href={certificate.pdf} download>Download PDF <Download size={16}/></a>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
         <section id="contact" data-section className="contact section-dark">
           <div className="contact-grid-pattern" aria-hidden="true" />
           <div className="section-shell contact-layout">
-            <Reveal><SectionLabel index="07" inverse>Start a conversation</SectionLabel><h2>Let’s build<br/><em>something useful.</em></h2></Reveal>
+            <Reveal><SectionLabel index="08" inverse>Start a conversation</SectionLabel><h2>Let’s build<br/><em>something useful.</em></h2></Reveal>
             <Reveal className="contact-copy" delay={0.08}><p>I am open to junior software-development roles, internships and relevant project opportunities. Feel free to contact me regarding a suitable opportunity or professional collaboration.</p><div className="contact-actions"><a className="button button-primary" href={`mailto:${siteConfig.email}`}>Email me <Mail size={18}/></a><a className="button button-ghost" href={siteConfig.linkedIn} target="_blank" rel="noreferrer">Connect on LinkedIn <AtSign size={18}/></a>{isPublicUrl(siteConfig.github) && <a className="text-link" href={siteConfig.github} target="_blank" rel="noreferrer">View GitHub <ArrowRight size={17}/></a>}</div></Reveal>
             <Reveal className="contact-details" delay={0.12}><a href={`mailto:${siteConfig.email}`}><Mail/><span><small>Email</small>{siteConfig.email}</span></a><a href={siteConfig.linkedIn} target="_blank" rel="noreferrer"><AtSign/><span><small>LinkedIn</small>syedmugheesali</span></a><div><MapPin/><span><small>Location</small>{siteConfig.location}</span></div></Reveal>
           </div>

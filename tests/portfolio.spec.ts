@@ -49,3 +49,19 @@ test("reduced motion and landscape remain usable", async ({ page }) => {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
 });
+
+test("certificate archive is part of the homepage flow without overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "networkidle" });
+  await expect(page.locator(".certificate-card")).toHaveCount(6);
+  await expect(page.getByRole("link", { name: /Verify credential/i })).toHaveCount(6);
+  await page.getByRole("link", { name: "Certificates", exact: true }).first().click();
+  await expect(page).toHaveURL(/#certificates$/);
+  await expect(page.locator("#certificates")).toBeInViewport();
+  await expect(page.locator(".desktop-nav a.active")).toHaveText("Certificates");
+  const labelTop = await page.locator("#certificates .section-label").first().evaluate((element) => element.getBoundingClientRect().top);
+  expect(labelTop).toBeGreaterThanOrEqual(76);
+  expect(labelTop).toBeLessThanOrEqual(120);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+});
