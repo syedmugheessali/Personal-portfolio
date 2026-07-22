@@ -37,7 +37,7 @@ export const projects: PortfolioProject[] = [
     features: ["Add, edit, and delete records", "Search and category filters", "Income, expense, and balance totals", "Local browser persistence"],
     technologies: ["JavaScript", "Semantic HTML", "Responsive CSS", "localStorage", "Node test runner"],
     image: "/images/projects/expense-tracker.webp",
-    githubUrl: "https://github.com/syedmugheessali/Personal-portfolio",
+    githubUrl: "https://github.com/syedmugheessali/expense-tracker-js",
     status: "Complete",
     featured: true,
   },
