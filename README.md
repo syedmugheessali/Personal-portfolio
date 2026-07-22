@@ -1,10 +1,20 @@
-# Syed Mughees Ali — Portfolio
+# Syed Mughees Ali — Developer Portfolio
 
-A premium, recruiter-focused portfolio rebuilt with Next.js App Router, TypeScript, Tailwind CSS, Motion for React, GSAP ScrollTrigger and Lucide React.
+A recruiter-focused portfolio for Syed Mughees Ali, built with Next.js App Router, TypeScript, React, responsive CSS, Motion, GSAP, and Playwright.
 
-## Run locally
+![Portfolio homepage](public/images/projects/developer-portfolio.webp)
 
-This machine uses Corepack because its bundled `npm` installation is currently broken.
+## Featured work
+
+- **Developer Portfolio** — this production Next.js application, including accessible navigation, metadata, structured data, responsive project cards, a certificate carousel, and Vercel monitoring.
+- **Ledgerly Expense Tracker** — a standalone vanilla JavaScript project under `projects/expense-tracker-js`, with localStorage CRUD, validation, search, filters, calculated totals, and Node tests.
+- **EventEase** — a separately versioned C#/Blazor project under `projects/EventEase`, upgraded with Entity Framework Core, SQLite persistence, event CRUD, registration rules, attendance tracking, and integration tests.
+
+The JavaScript workspace is declared in `pnpm-workspace.yaml`. EventEase remains an independent nested repository and is not bundled into the production Next.js application.
+
+## Run the portfolio locally
+
+Requirements: Node.js 20+ and Corepack.
 
 ```powershell
 corepack pnpm install
@@ -13,45 +23,47 @@ corepack pnpm dev
 
 Open `http://localhost:3000`.
 
+## Public configuration
+
+Copy `.env.example` to `.env.local` only when overriding a public default:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://syedmugheesali.vercel.app
+NEXT_PUBLIC_GITHUB_URL=https://github.com/syedmugheessali
+NEXT_PUBLIC_RESUME_URL=
+NEXT_PUBLIC_PORTRAIT_URL=/images/profile-headshot.webp
+```
+
+Do not store secrets in `NEXT_PUBLIC_*` variables because Next.js exposes them to browser code. The résumé action remains a working email request until a verified public résumé file or URL is configured.
+
 ## Quality checks
 
 ```powershell
 corepack pnpm lint
+corepack pnpm typecheck
+corepack pnpm test
 corepack pnpm build
 corepack pnpm test:visual
 ```
 
-The Playwright suite starts the production server on port 4173, captures 1440×1000, 1280×800, 768×1024 and 390×844 screenshots, checks horizontal overflow and browser errors, and verifies Escape-key dismissal of the mobile menu.
+The Playwright wrapper starts and stops the production portfolio and static expense-tracker servers. Browser coverage includes 375×812, 768×1024, and 1440×900 layouts plus a 720-CSS-pixel 200%-zoom equivalent; console errors; horizontal overflow; keyboard navigation; project fallbacks; certificate autoplay, pause, arrows, reduced motion, and touch dragging; metadata and public routes; plus the expense tracker's validated CRUD and persistence flow.
 
-## Content and asset configuration
+EventEase has its own setup, database, test, and deployment instructions in [`projects/EventEase/README.md`](projects/EventEase/README.md).
 
-Copy `.env.example` to `.env.local` and configure only verified public values:
+## Production metadata
 
-```env
-NEXT_PUBLIC_SITE_URL=https://your-production-domain.com
-NEXT_PUBLIC_GITHUB_URL=https://github.com/verified-username
-NEXT_PUBLIC_RESUME_URL=/syed-mughees-ali-resume.pdf
-NEXT_PUBLIC_PORTRAIT_URL=/profile-headshot.jpg
-```
-
-Place the approved résumé and portrait in `public/`. When these variables are absent, the site intentionally shows a professional portrait placeholder, offers a working résumé-request email, and hides the GitHub link. No fake projects or broken actions are rendered.
-
-Confirmed personal content is in `lib/site.ts` and `app/page.tsx`. The selected visual direction and motion rules are documented in `docs/`.
+- Canonical site: `https://syedmugheesali.vercel.app`
+- Open Graph image: 1200×630 at `/og-image.png`
+- Crawl endpoints: `/robots.txt` and `/sitemap.xml`
+- Person and WebSite JSON-LD share the canonical production origin.
+- GitHub and LinkedIn are included in the Person `sameAs` data.
 
 ## Deploy to Vercel
 
-1. Push the repository to a Git provider and import it into Vercel.
-2. Vercel will detect Next.js; no custom build command is needed.
-3. Add the `NEXT_PUBLIC_*` values above in Project Settings → Environment Variables.
-4. Deploy, then run the Playwright checks against the production URL or review the live site manually.
-5. Confirm the canonical origin, résumé, portrait, GitHub profile and all external links before sharing with recruiters.
+1. Push the reviewed files to the `Personal-portfolio` repository.
+2. Import or reconnect that repository in Vercel.
+3. Confirm the public environment values from `.env.example`.
+4. Enable Web Analytics and Speed Insights in the Vercel dashboard.
+5. Redeploy, then verify `/`, `/robots.txt`, `/sitemap.xml`, `/og-image.png`, and `/favicon.svg`.
 
-## Genuine remaining content TODOs
-
-- Add the approved professional portrait.
-- Add the reviewed résumé PDF.
-- Confirm the GitHub profile URL.
-- Set the production domain/canonical URL.
-- Add verified projects, screenshots, repositories and demos.
-- Confirm Disc & Drive employment type, exact stack, delivered features and verified outcomes.
-- Add credential links and details for certifications whose issuer/date is not yet confirmed.
+Analytics data appears only after the dashboard products are enabled, a production deployment is live, and the site receives real traffic.

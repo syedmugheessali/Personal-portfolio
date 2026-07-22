@@ -1,6 +1,9 @@
 node_modules/
 .next/
 .qa/
+.tools/
+.pnpm-store/
+projects/EventEase/
 playwright-report/
 test-results/
 *.tsbuildinfo

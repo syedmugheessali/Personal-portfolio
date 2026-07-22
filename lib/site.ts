@@ -1,13 +1,17 @@
+const productionSiteUrl = "https://syedmugheesali.vercel.app";
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = configuredSiteUrl && /^https?:\/\//.test(configuredSiteUrl) ? configuredSiteUrl.replace(/\/$/, "") : productionSiteUrl;
+
 export const siteConfig = {
   name: "Syed Mughees Ali",
-  role: "Junior Full-Stack Developer",
+  role: "Full Stack Developer",
   email: "syedmugheessali@gmail.com",
   linkedIn: "https://www.linkedin.com/in/syedmugheesali/",
-  github: process.env.NEXT_PUBLIC_GITHUB_URL || "",
+  github: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/syedmugheessali",
   resume: process.env.NEXT_PUBLIC_RESUME_URL || "",
-  portrait: process.env.NEXT_PUBLIC_PORTRAIT_URL || "",
+  portrait: process.env.NEXT_PUBLIC_PORTRAIT_URL || "/images/profile-headshot.webp",
   location: "Karachi, Sindh, Pakistan",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://REPLACE-WITH-YOUR-DOMAIN.example",
+  siteUrl,
 } as const;
 
 export const isPublicUrl = (value: string) =>

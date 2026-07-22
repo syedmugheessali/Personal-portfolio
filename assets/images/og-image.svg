@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">Syed Mughees Ali — Junior Full-Stack Developer</title>
+  <title id="title">Syed Mughees Ali — Full Stack Developer</title>
   <desc id="description">Navy professional portfolio card with SMA initials and blue technical details.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
@@ -21,7 +21,7 @@
   </g>
   <text x="86" y="290" fill="#9fc6ff" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">PORTFOLIO · KARACHI, PAKISTAN</text>
   <text x="84" y="376" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-3">Syed Mughees Ali</text>
-  <text x="87" y="434" fill="#cbd8e9" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">Junior Full-Stack Developer</text>
+  <text x="87" y="434" fill="#cbd8e9" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">Full Stack Developer</text>
   <line x1="87" y1="492" x2="735" y2="492" stroke="#60a5fa" stroke-opacity=".35"/>
   <g fill="#bcd7fb" font-family="Consolas, monospace" font-size="19">
     <text x="88" y="544">C#</text>

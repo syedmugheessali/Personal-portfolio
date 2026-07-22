@@ -6,7 +6,7 @@ import { ArrowDownToLine, Menu, X } from "lucide-react";
 import { siteConfig, isPublicAssetUrl } from "@/lib/site";
 
 const links = [
-  ["about", "About"], ["experience", "Experience"], ["projects", "Work"], ["capabilities", "Capabilities"], ["certificates", "Certificates"], ["contact", "Contact"],
+  ["projects", "Projects"], ["capabilities", "Skills"], ["experience", "Experience"], ["about", "About"], ["certificates", "Certificates"], ["contact", "Contact"],
 ];
 export function Navigation() {
   const [open, setOpen] = useState(false);
@@ -61,7 +61,7 @@ export function Navigation() {
     <>
       <header className={`site-header ${scrolled || open ? "is-scrolled" : ""} ${open ? "menu-open" : ""}`}>
         <nav className="nav-shell" aria-label="Primary navigation">
-          <a className="wordmark" href="#home" onClick={(event) => navigateToSection(event, "home")} aria-label="Syed Mughees Ali, home"><span>SMA</span><small>Full-Stack Developer</small></a>
+          <a className="wordmark" href="#home" onClick={(event) => navigateToSection(event, "home")} aria-label="Syed Mughees Ali, home"><span>SMA</span><small>Full Stack Developer</small></a>
           <div className="desktop-nav">
             {links.map(([id, label]) => <a key={id} className={active === id ? "active" : ""} href={`#${id}`} onClick={(event) => navigateToSection(event, id)}>{label}</a>)}
           </div>
