@@ -1,4 +1,4 @@
-const productionSiteUrl = "https://syedmugheesali.vercel.app";
+const productionSiteUrl = "https://syedmugheesali.me";
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const siteUrl = configuredSiteUrl && /^https?:\/\//.test(configuredSiteUrl) ? configuredSiteUrl.replace(/\/$/, "") : productionSiteUrl;
 
