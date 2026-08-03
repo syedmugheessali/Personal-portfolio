@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">Syed Mughees Ali — Full Stack Developer</title>
-  <desc id="description">Navy professional portfolio card with SMA initials and blue technical details.</desc>
+  <desc id="description">Professional portfolio thumbnail featuring Syed Mughees Ali's portrait, name, role, and core technologies.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#061225"/>
@@ -10,6 +10,16 @@
     <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
       <path d="M72 0H0V72" fill="none" stroke="#60a5fa" stroke-opacity=".11"/>
     </pattern>
+    <clipPath id="portraitClip">
+      <rect x="824" y="62" width="304" height="506" rx="42"/>
+    </clipPath>
+    <linearGradient id="portraitFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset=".58" stop-color="#061225" stop-opacity="0"/>
+      <stop offset="1" stop-color="#061225" stop-opacity=".46"/>
+    </linearGradient>
+    <filter id="portraitShadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#020817" flood-opacity=".72"/>
+    </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#background)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
@@ -29,10 +39,12 @@
     <text x="267" y="544">SQL</text>
     <text x="339" y="544">APIs</text>
   </g>
-  <g transform="translate(913 128)" fill="none" stroke="#60a5fa">
-    <rect width="198" height="318" rx="80" fill="#3b82f6" fill-opacity=".045" stroke-opacity=".28" stroke-width="2"/>
-    <path d="M40 81h118M40 117h78M40 153h102" stroke-opacity=".23" stroke-width="2"/>
-    <path d="M58 244l30 30 57-67" stroke-opacity=".75" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g filter="url(#portraitShadow)">
+    <rect x="814" y="52" width="324" height="526" rx="50" fill="#60a5fa" fill-opacity=".12"/>
+    <image href="../../public/images/profile-headshot.webp" x="824" y="62" width="304" height="506" preserveAspectRatio="xMidYMid slice" clip-path="url(#portraitClip)"/>
+    <rect x="824" y="62" width="304" height="506" rx="42" fill="url(#portraitFade)"/>
+    <rect x="824" y="62" width="304" height="506" rx="42" fill="none" stroke="#93c5fd" stroke-opacity=".68" stroke-width="2"/>
   </g>
+  <circle cx="1108" cy="86" r="10" fill="#60a5fa"/>
   <rect y="622" width="1200" height="8" fill="#3b82f6"/>
 </svg>
