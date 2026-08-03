@@ -9,11 +9,53 @@ export type PortfolioProject = {
   image: string;
   githubUrl: string;
   liveUrl?: string;
-  status: "Live" | "Complete" | "Database-backed";
+  status: "Live" | "Complete" | "Database-backed" | "Interactive" | "Playable";
   featured: boolean;
 };
 
 export const projects: PortfolioProject[] = [
+  {
+    id: "orbit",
+    title: "Orbit Task Studio",
+    shortDescription: "A responsive task workspace that combines planning, smart recommendations, and focused work sessions.",
+    problem: "Keep daily priorities, task context, and focused execution together without depending on an account or external service.",
+    solution: "A framework-free task manager with local persistence, board and list views, rule-based recommendations, and a built-in focus timer.",
+    features: ["Board and list workflows", "Rule-based task recommendations", "Configurable focus sessions", "Local browser persistence"],
+    technologies: ["JavaScript", "Semantic HTML", "Responsive CSS", "localStorage"],
+    image: "/images/projects/orbit.png",
+    githubUrl: "https://github.com/syedmugheessali/orbit",
+    liveUrl: "https://orbit9.vercel.app",
+    status: "Live",
+    featured: true,
+  },
+  {
+    id: "lumas-skybound-quest",
+    title: "Luma's Skybound Quest",
+    shortDescription: "A handcrafted 2D canvas platformer spanning three realms with enemies, collectibles, bosses, and persistent progress.",
+    problem: "Create a complete cross-device platform adventure using browser-native technologies and no game framework.",
+    solution: "A modular JavaScript game engine with collision systems, layered rendering, keyboard, gamepad and touch input, and recoverable saves.",
+    features: ["Three complete playable realms", "Keyboard, gamepad, and touch controls", "Bosses, checkpoints, and collectibles", "Persistent progress and settings"],
+    technologies: ["JavaScript", "Canvas API", "HTML", "CSS", "Node test runner"],
+    image: "/images/projects/lumas.png",
+    githubUrl: "https://github.com/syedmugheessali/lumas-2d-Javascript-only",
+    liveUrl: "https://lumas-2d.vercel.app",
+    status: "Playable",
+    featured: true,
+  },
+  {
+    id: "canvas-physics",
+    title: "Canvas Physics",
+    shortDescription: "An interactive particle playground that turns pointer movement into colorful motion and connecting trails.",
+    problem: "Explore responsive particle movement and proximity-based connections directly in the browser.",
+    solution: "A lightweight HTML Canvas experiment with animated particles, boundary collisions, hue shifts, and distance-aware line rendering.",
+    features: ["Pointer-generated particles", "Boundary collision response", "Dynamic color animation", "Proximity-based connections"],
+    technologies: ["JavaScript", "Canvas API", "HTML"],
+    image: "/images/projects/canvas-physics.png",
+    githubUrl: "https://github.com/syedmugheessali/canvas-physics",
+    liveUrl: "https://canvas-dots.vercel.app",
+    status: "Interactive",
+    featured: true,
+  },
   {
     id: "developer-portfolio",
     title: "Developer Portfolio",

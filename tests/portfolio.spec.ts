@@ -49,7 +49,16 @@ test("mobile navigation supports keyboard dismissal", async ({ page }) => {
 test("project cards use verified actions and an image fallback", async ({ page }) => {
   await page.route("**/_next/image**", (route) => decodeURIComponent(route.request().url()).includes("developer-portfolio.webp") ? route.abort() : route.continue());
   await page.goto("/", { waitUntil: "networkidle" });
-  await expect(page.locator(".project-card")).toHaveCount(3);
+  await expect(page.locator(".project-card")).toHaveCount(6);
+  const orbit = page.locator(".project-card").filter({ hasText: "Orbit Task Studio" });
+  await expect(orbit.getByRole("link", { name: /Open Orbit Task Studio live demo/ })).toHaveAttribute("href", "https://orbit9.vercel.app");
+  const lumas = page.locator(".project-card").filter({ hasText: "Luma's Skybound Quest" });
+  await expect(lumas.getByRole("link")).toHaveCount(2);
+  await expect(lumas.getByRole("link", { name: /View Luma's Skybound Quest source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/lumas-2d-Javascript-only");
+  await expect(lumas.getByRole("link", { name: /Open Luma's Skybound Quest live demo/ })).toHaveAttribute("href", "https://lumas-2d.vercel.app");
+  const canvas = page.locator(".project-card").filter({ hasText: "Canvas Physics" });
+  await expect(canvas.getByRole("link")).toHaveCount(2);
+  await expect(canvas.getByRole("link", { name: /Open Canvas Physics live demo/ })).toHaveAttribute("href", "https://canvas-dots.vercel.app");
   const eventEase = page.locator(".project-card").filter({ hasText: "EventEase" });
   await expect(eventEase.getByRole("link")).toHaveCount(1);
   await expect(eventEase.getByRole("link", { name: /View EventEase source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/EventEase");
