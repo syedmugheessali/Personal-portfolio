@@ -245,8 +245,8 @@ button,a { cursor:pointer; }
 .education-card span { margin-top:.4rem;color:var(--muted);font-size:.88rem; }
 
 /* Accessible continuous certificate carousel */
-.certificate-carousel { padding-top:2rem; }
-.carousel-controls { display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem; }
+.certificate-carousel { width:100vw;margin-left:calc(50% - 50vw);padding-top:2rem; }
+.carousel-controls { display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem;padding-inline:max(1.5rem,calc((100vw - 1240px)/2)); }
 .carousel-controls p { margin:0;color:var(--muted);font-size:.82rem; }
 .carousel-controls>div { display:flex;gap:.55rem; }
 .carousel-controls button { width:48px;height:48px;display:grid;place-items:center;color:white;background:var(--ink);border:0;transition:background .2s,transform .2s;cursor:pointer; }
@@ -276,7 +276,7 @@ button,a { cursor:pointer; }
 @media (max-width:680px) {
   .project-grid { grid-template-columns:1fr;gap:1.25rem;padding-top:2.5rem; }
   .projects-footer,.projects-footer .button { width:100%; }
-  .carousel-controls { align-items:flex-end; }
+  .carousel-controls { align-items:flex-end;padding-inline:1rem; }
   .carousel-controls p { max-width:210px; }
   .carousel-track { gap:1rem; }
   .carousel-track .certificate-card { flex-basis:86vw;width:86vw; }
