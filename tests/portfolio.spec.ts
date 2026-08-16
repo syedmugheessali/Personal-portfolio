@@ -50,6 +50,12 @@ test("project cards use verified actions and an image fallback", async ({ page }
   await page.route("**/_next/image**", (route) => decodeURIComponent(route.request().url()).includes("developer-portfolio.webp") ? route.abort() : route.continue());
   await page.goto("/", { waitUntil: "networkidle" });
   await expect(page.locator(".project-card")).toHaveCount(6);
+  const localPlay = page.locator(".project-card").filter({ hasText: "LocalPlay Video Player" });
+  await expect(localPlay.getByRole("link", { name: /View LocalPlay Video Player source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/localplay");
+  await expect(localPlay.getByRole("link", { name: /Open LocalPlay Video Player live demo/ })).toHaveAttribute("href", "https://syedmugheessali.github.io/localplay/");
+  const giftshop = page.locator(".project-card").filter({ hasText: "GIFTONIC Giftshop" });
+  await expect(giftshop.getByRole("link")).toHaveCount(1);
+  await expect(giftshop.getByRole("link", { name: /View GIFTONIC Giftshop source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/giftshop");
   const orbit = page.locator(".project-card").filter({ hasText: "Orbit Task Studio" });
   await expect(orbit.getByRole("link", { name: /Open Orbit Task Studio live demo/ })).toHaveAttribute("href", "https://orbit9.vercel.app");
   const lumas = page.locator(".project-card").filter({ hasText: "Luma's Skybound Quest" });
@@ -59,9 +65,6 @@ test("project cards use verified actions and an image fallback", async ({ page }
   const canvas = page.locator(".project-card").filter({ hasText: "Canvas Physics" });
   await expect(canvas.getByRole("link")).toHaveCount(2);
   await expect(canvas.getByRole("link", { name: /Open Canvas Physics live demo/ })).toHaveAttribute("href", "https://canvas-dots.vercel.app");
-  const eventEase = page.locator(".project-card").filter({ hasText: "EventEase" });
-  await expect(eventEase.getByRole("link")).toHaveCount(1);
-  await expect(eventEase.getByRole("link", { name: /View EventEase source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/EventEase");
   await expect(page.getByText("Screenshot unavailable").first()).toBeVisible();
 });
 

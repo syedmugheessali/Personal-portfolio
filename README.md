@@ -21,12 +21,12 @@ The site is designed to make professional information and project evidence easy 
 
 ## Featured projects
 
+- [LocalPlay Video Player](https://github.com/syedmugheessali/localplay)
+- [GIFTONIC Giftshop](https://github.com/syedmugheessali/giftshop)
 - [Orbit Task Studio](https://github.com/syedmugheessali/orbit)
 - [Luma's Skybound Quest](https://github.com/syedmugheessali/lumas-2d-Javascript-only)
 - [Canvas Physics](https://github.com/syedmugheessali/canvas-physics)
 - [Developer Portfolio](https://github.com/syedmugheessali/Personal-portfolio)
-- [Ledgerly Expense Tracker](https://github.com/syedmugheessali/expense-tracker-js)
-- [EventEase](https://github.com/syedmugheessali/EventEase)
 
 ## Built with
 

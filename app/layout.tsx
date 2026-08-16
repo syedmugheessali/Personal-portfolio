@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { isPublicAssetUrl, siteConfig } from "@/lib/site";
+import { TechnicalCursor } from "@/components/TechnicalCursor";
 
 const heading = Lexend({ subsets: ["latin"], variable: "--font-heading", display: "swap" });
 const body = Source_Sans_3({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body suppressHydrationWarning>
+        <TechnicalCursor />
         {children}
         {isVercelDeployment && <Analytics />}
         {isVercelDeployment && <SpeedInsights />}
