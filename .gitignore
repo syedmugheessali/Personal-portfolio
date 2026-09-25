@@ -3,6 +3,7 @@ node_modules/
 .qa/
 .tools/
 .pnpm-store/
+.npm-cache/
 projects/EventEase/
 playwright-report/
 test-results/

@@ -21,6 +21,7 @@ The site is designed to make professional information and project evidence easy 
 
 ## Featured projects
 
+- [Confessions](https://github.com/syedmugheessali/Confessions)
 - [LocalPlay Video Player](https://github.com/syedmugheessali/localplay)
 - [GIFTONIC Giftshop](https://github.com/syedmugheessali/giftshop)
 - [Orbit Task Studio](https://github.com/syedmugheessali/orbit)

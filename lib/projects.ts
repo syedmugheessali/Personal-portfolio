@@ -15,6 +15,19 @@ export type PortfolioProject = {
 
 export const projects: PortfolioProject[] = [
   {
+    id: "confessions",
+    title: "Confessions",
+    shortDescription: "An ephemeral anonymous confession platform featuring time-limited posts, live countdowns, and role-based moderation.",
+    problem: "Share thoughts and confessions candidly without permanent digital footprints or identity exposure.",
+    solution: "A full-stack MERN application with anonymous-first submission, auto-expiring posts with live countdown timers, and role-based access control for administrative moderation.",
+    features: ["Anonymous-first confession feeds", "Live expiration countdown timers", "Tiered role-based moderation (RBAC)", "Parallelized queries and connection pooling"],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "REST API"],
+    image: "/images/projects/confessions.png",
+    githubUrl: "https://github.com/syedmugheessali/Confessions",
+    status: "Database-backed",
+    featured: true,
+  },
+  {
     id: "localplay",
     title: "LocalPlay Video Player",
     shortDescription: "A privacy-first browser video player with custom controls, subtitles, bookmarks, snapshots, and no uploads.",

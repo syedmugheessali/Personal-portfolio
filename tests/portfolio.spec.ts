@@ -49,7 +49,10 @@ test("mobile navigation supports keyboard dismissal", async ({ page }) => {
 test("project cards use verified actions and an image fallback", async ({ page }) => {
   await page.route("**/_next/image**", (route) => decodeURIComponent(route.request().url()).includes("developer-portfolio.webp") ? route.abort() : route.continue());
   await page.goto("/", { waitUntil: "networkidle" });
-  await expect(page.locator(".project-card")).toHaveCount(6);
+  await expect(page.locator(".project-card")).toHaveCount(7);
+  const confessions = page.locator(".project-card").filter({ hasText: "Confessions" });
+  await expect(confessions.getByRole("link")).toHaveCount(1);
+  await expect(confessions.getByRole("link", { name: /View Confessions source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/Confessions");
   const localPlay = page.locator(".project-card").filter({ hasText: "LocalPlay Video Player" });
   await expect(localPlay.getByRole("link", { name: /View LocalPlay Video Player source code/ })).toHaveAttribute("href", "https://github.com/syedmugheessali/localplay");
   await expect(localPlay.getByRole("link", { name: /Open LocalPlay Video Player live demo/ })).toHaveAttribute("href", "https://syedmugheessali.github.io/localplay/");
