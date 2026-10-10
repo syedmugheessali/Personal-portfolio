@@ -8,7 +8,7 @@ export const siteConfig = {
   email: "syedmugheessali@gmail.com",
   linkedIn: "https://www.linkedin.com/in/syedmugheesali/",
   github: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/syedmugheessali",
-  resume: process.env.NEXT_PUBLIC_RESUME_URL || "/Syed_Mughees_Ali_Resume.pdf",
+  resume: "/Syed_Mughees_Ali_Resume.pdf",
   portrait: process.env.NEXT_PUBLIC_PORTRAIT_URL || "/images/profile-headshot.webp",
   location: "Karachi, Sindh, Pakistan",
   siteUrl,
