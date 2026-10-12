@@ -31,7 +31,7 @@ The site is designed to make professional information and project evidence easy 
 
 ## Built with
 
-Next.js, React, TypeScript, responsive CSS, Motion, GSAP, and Playwright.
+Next.js, React, TypeScript, responsive CSS, Motion and GSAP.
 
 ## Connect
 
