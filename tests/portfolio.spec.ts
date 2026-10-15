@@ -75,7 +75,7 @@ test("certificate carousel autoplays, pauses, and supports manual controls", asy
   await page.goto("/", { waitUntil: "networkidle" });
   const carousel = page.getByRole("region", { name: "Professional certificates" });
   const viewport = carousel.locator(".carousel-viewport");
-  await expect(carousel.locator(".certificate-card:not([aria-hidden=true])")).toHaveCount(6);
+  await expect(carousel.locator(".certificate-card:not([aria-hidden=true])")).toHaveCount(10);
   await expect(carousel.locator(".carousel-clones")).toHaveAttribute("aria-hidden", "true");
   const start = await viewport.evaluate((element) => element.scrollLeft);
   await page.waitForTimeout(650);

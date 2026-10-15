@@ -19,10 +19,10 @@ function CertificateCard({ certificate, index, clone = false }: { certificate: C
       <div className="certificate-card-body">
         <div className="certificate-card-meta"><span>{String(index + 1).padStart(2, "0")} / {certificate.category}</span><time dateTime={certificate.dateTime}>{certificate.date}</time></div>
         <h3>{certificate.title}</h3>
-        <p className="certificate-issuer"><BadgeCheck size={17} />{certificate.issuer} · Coursera</p>
-        <p className="credential-code">Credential ID <strong>{certificate.credentialId}</strong></p>
+        <p className="certificate-issuer"><BadgeCheck size={17} />{certificate.issuer}{certificate.platform ? ` · ${certificate.platform}` : ""}</p>
+        {certificate.credentialId && <p className="credential-code">Credential ID <strong>{certificate.credentialId}</strong></p>}
         <div className="certificate-actions">
-          <a href={certificate.verifyUrl} target="_blank" rel="noopener noreferrer" tabIndex={clone ? -1 : undefined}>Verify <ExternalLink size={15} /></a>
+          {certificate.verifyUrl && <a href={certificate.verifyUrl} target="_blank" rel="noopener noreferrer" tabIndex={clone ? -1 : undefined}>Verify <ExternalLink size={15} /></a>}
           <a href={certificate.pdf} download tabIndex={clone ? -1 : undefined}>PDF <Download size={15} /></a>
         </div>
       </div>

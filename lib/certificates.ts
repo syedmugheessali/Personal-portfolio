@@ -3,11 +3,12 @@ export type Certificate = {
   issuer: string;
   date: string;
   dateTime: string;
-  credentialId: string;
+  credentialId?: string;
   pdf: string;
   thumbnail: string;
-  verifyUrl: string;
-  category: "Development" | "Data & AI";
+  verifyUrl?: string;
+  category: "Development" | "Data & AI" | "AI & Security";
+  platform?: string;
 };
 
 export const certificates: Certificate[] = [
@@ -21,6 +22,17 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/VIS2AACNE3MU.webp",
     verifyUrl: "https://coursera.org/verify/VIS2AACNE3MU",
     category: "Data & AI",
+    platform: "Coursera",
+  },
+  {
+    title: "OpenAI Technical Practitioner",
+    issuer: "OpenAI",
+    date: "August 28, 2026",
+    dateTime: "2026-08-28",
+    pdf: "/certificates/openai-certificates/OpenAI Technical Practitioner.pdf",
+    thumbnail: "/certificates/thumbnails/OpenAI_Technical_Practitioner.webp",
+    category: "Data & AI",
+    platform: "OpenAI",
   },
   {
     title: "Blazor for Front-End Development",
@@ -32,6 +44,17 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/GYEWMBJVBHJD.webp",
     verifyUrl: "https://coursera.org/verify/GYEWMBJVBHJD",
     category: "Development",
+    platform: "Coursera",
+  },
+  {
+    title: "OpenAI Cyber Deployment Practitioner",
+    issuer: "OpenAI",
+    date: "August 25, 2026",
+    dateTime: "2026-08-25",
+    pdf: "/certificates/openai-certificates/OpenAI Cyber Deployment Practitioner.pdf",
+    thumbnail: "/certificates/thumbnails/OpenAI_Cyber_Deployment_Practitioner.webp",
+    category: "AI & Security",
+    platform: "OpenAI",
   },
   {
     title: "Introduction to Web Development",
@@ -43,6 +66,17 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/1O6PDS5B3VAI.webp",
     verifyUrl: "https://coursera.org/verify/1O6PDS5B3VAI",
     category: "Development",
+    platform: "Coursera",
+  },
+  {
+    title: "API Deployment Practitioner",
+    issuer: "OpenAI",
+    date: "August 27, 2026",
+    dateTime: "2026-08-27",
+    pdf: "/certificates/openai-certificates/API Deployment Practitioner.pdf",
+    thumbnail: "/certificates/thumbnails/API_Deployment_Practitioner.webp",
+    category: "Data & AI",
+    platform: "OpenAI",
   },
   {
     title: "Introduction to Programming With C#",
@@ -54,6 +88,17 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/VJLOTSIGTOCV.webp",
     verifyUrl: "https://coursera.org/verify/VJLOTSIGTOCV",
     category: "Development",
+    platform: "Coursera",
+  },
+  {
+    title: "OpenAI Consultative Solutions Practitioner",
+    issuer: "OpenAI",
+    date: "August 31, 2026",
+    dateTime: "2026-08-31",
+    pdf: "/certificates/openai-certificates/OpenAI Consultative Solutions Practitioner.pdf",
+    thumbnail: "/certificates/thumbnails/OpenAI_Consultative_Solutions_Practitioner.webp",
+    category: "Data & AI",
+    platform: "OpenAI",
   },
   {
     title: "Foundations of Coding Full-Stack",
@@ -65,6 +110,7 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/E245AHPTWNJG.webp",
     verifyUrl: "https://coursera.org/verify/E245AHPTWNJG",
     category: "Development",
+    platform: "Coursera",
   },
   {
     title: "Foundations of Data Science",
@@ -76,5 +122,6 @@ export const certificates: Certificate[] = [
     thumbnail: "/certificates/thumbnails/PO52BDH8HE3S.webp",
     verifyUrl: "https://coursera.org/verify/PO52BDH8HE3S",
     category: "Data & AI",
+    platform: "Coursera",
   },
 ];
