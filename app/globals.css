@@ -275,7 +275,7 @@ button,a { cursor:pointer; }
 .carousel-controls>div { display:flex;gap:.55rem; }
 .carousel-controls button { width:48px;height:48px;display:grid;place-items:center;color:white;background:var(--ink);border:0;transition:background .2s,transform .2s;cursor:pointer; }
 .carousel-controls button:hover { background:var(--blue);transform:translateY(-2px); }
-.carousel-viewport { overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-width:none;cursor:grab;touch-action:pan-y; }
+.carousel-viewport { overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-width:none;cursor:grab;touch-action:pan-y pinch-zoom;-webkit-overflow-scrolling:touch; }
 .carousel-viewport::-webkit-scrollbar { display:none; }
 .carousel-viewport:active { cursor:grabbing; }
 .carousel-track { width:max-content;display:flex;gap:1.5rem;will-change:scroll-position; }
