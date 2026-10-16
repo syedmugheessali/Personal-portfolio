@@ -3,11 +3,11 @@ import { CertificateCarousel } from "@/components/CertificateCarousel";
 import { Hero } from "@/components/Hero";
 import { Navigation } from "@/components/Navigation";
 import { PageEnhancements } from "@/components/PageEnhancements";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { Reveal } from "@/components/Reveal";
 import { ExperienceProgress } from "@/components/ScrollStories";
 import { GitHubIcon } from "@/components/GitHubIcon";
-import { projects } from "@/lib/projects";
+
 import { siteConfig } from "@/lib/site";
 
 const snapshot = [
@@ -43,7 +43,6 @@ function SectionLabel({ index, children, inverse = false }: { index: string; chi
 }
 
 export default function Home() {
-  const featuredProjects = projects.filter((project) => project.featured);
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -55,7 +54,7 @@ export default function Home() {
         <section id="projects" data-section className="projects section-light section-pad" aria-labelledby="projects-title">
           <div className="section-shell">
             <Reveal className="section-intro dark-text"><SectionLabel index="01">Featured projects</SectionLabel><h2 id="projects-title">Real applications,<br/>built to be useful.</h2><p>Selected work with verified source code, honest implementation details, and live links only where a deployment exists.</p></Reveal>
-            <div className="project-grid">{featuredProjects.map((project, index) => <ProjectCard project={project} index={index} key={project.id} />)}</div>
+            <ProjectCarousel />
             <Reveal className="projects-footer"><a className="button button-dark" href={siteConfig.github} target="_blank" rel="noopener noreferrer">View all projects on GitHub <ExternalLink size={17}/></a></Reveal>
           </div>
         </section>
